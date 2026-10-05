@@ -1,0 +1,25 @@
+# Secrets
+.env
+.env.*
+*.key
+*.pem
+credentials*
+secrets*
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Logs / databases
+*.log
+*.db
+*.sqlite
+*.sqlite3
+
+# Backups / temporary files
+*.bak
+*.backup
+*.tmp
+*~
