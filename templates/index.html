@@ -3,150 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K2 PRISON SHEETZ — THE PINNACLE OF POTENCY</title>
-    <link rel="stylesheet" href="style.css">
+    <title>K2 Prison Sheetz — THE PINNACLE OF POTENCY</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/images/k2-logo.png">
 </head>
 <body>
 
     <!-- NAV -->
     <nav class="nav">
         <div class="nav-inner">
-            <span class="nav-logo">K2 PRISON SHEETZ</span>
+            <a href="#products" class="nav-logo">
+                <img src="/static/images/k2-logo.png" alt="K2 Prison Sheetz Logo" height="40" style="filter: drop-shadow(0 0 20px #39FF14);">
+                K2 Prison Sheetz
+            </a>
             <div class="nav-links">
                 <a href="#products">PRODUCTS</a>
                 <a href="#specs">SPECS</a>
-                <a href="#orders">ORDERS</a>
+                <a href="/checkout">ORDERS</a>
             </div>
         </div>
     </nav>
 
     <!-- HERO -->
-    <section class="hero">
-        <div class="hero-grid"></div>
-        <div class="hero-scanline"></div>
-        <div class="hero-content">
-            <p class="hero-tag">// EST. 2024 // SECURE // DISCREET</p>
-            <h1 class="hero-headline">K2 PRISON SHEETZ<br><span class="highlight">— THE PINNACLE OF POTENCY.</span></h1>
-            <p class="hero-sub">Engineered for maximum impact.</p>
-            <div class="hero-cta-row">
-                <a href="#products" class="btn-primary">VIEW PRODUCTS</a>
-                <a href="#orders" class="btn-secondary">PLACE ORDER</a>
+    <section class="section hero">
+        <div class="section-inner">
+            <div class="hero-content">
+                <!-- MAIN HERO IMAGE -->
+                <div class="hero-image-container">
+                    <img src="/static/images/k2prisonsheetz-hero.png" alt="K2 Prison Sheetz Hero" class="hero-image">
+                </div>
+                <!-- MAIN LOGO -->
+                <div class="hero-logo">
+                    <img src="/static/images/k2-logo.png" alt="K2 Prison Sheetz Neon Logo" class="logo-image">
+                </div>
+                <p class="hero-tag">WE DRIP THE MIGHTIEST CARDS</p>
+                <h1 class="hero-headline">K2 PRISON SHEETZ</h1>
+                <p class="hero-sub">THE PINNACLE OF POTENCY</p>
+                <div class="hero-wallet">
+                    <span>WALLET:</span>
+                    <code class="wallet-address">bc1qtema35w6qeeqmwnuxr3u9f3nx3gvqc79cl7dxv</code>
+                </div>
+                <div class="hero-cta-row">
+                    <a href="/#products" class="btn-primary">EXPLORE CATALOG</a>
+                    <a href="/checkout" class="btn-secondary">PROCESS ORDER</a>
+                </div>
             </div>
-            <p class="hero-wallet">WALLET: <code>bc1qtema35w6qeeqmwnuxr3u9f3nx3gvqc79cl7dxv</code></p>
         </div>
     </section>
 
     <!-- PRODUCTS -->
     <section id="products" class="section">
         <div class="section-inner">
-            <p class="section-label">// FEATURED / PRODUCTS</p>
-            <h2 class="section-title">SELECT YOUR LOAD</h2>
-
+            <p class="section-label">// PRODUCT LINEUP</p>
+            <h2 class="section-title">AVAILABLE PRODUCTS</h2>
             <div class="product-grid">
-
-                <!-- FLAGSHIP: JAIL TERROR -->
-                <div class="product-card flagship">
-                    <span class="badge-flagship">FLAGSHIP</span>
-                    <h3 class="product-name">JAIL TERROR</h3>
-                    <p class="product-sub">300gsm Cardstock</p>
-                    <p class="product-desc">Meticulously dipped in a massive <strong>9g of 5F-ADB</strong>. Two decades of soaking expertise. Professional, undetectable finish.</p>
-                    <div class="product-meta">
-                        <span class="price">0.001786 BTC</span>
-                        <span class="price-usd">$150.00 USD</span>
-                    </div>
-                    <a href="/product/jail-terror" class="btn-primary btn-block">VIEW SPECS</a>
-                </div>
-
-                <!-- ZOMBIE SHEETS -->
                 <div class="product-card">
-                    <h3 class="product-name">ZOMBIE SHEETS</h3>
-                    <p class="product-sub">200gsm Drip</p>
-                    <p class="product-desc">Hyper-saturated sheets soaked in a massive <strong>5g dose of 5F-ADB</strong>. Engineered for maximum impact.</p>
-                    <div class="product-meta">
-                        <span class="price">0.001610 BTC</span>
-                        <span class="price-usd">$135.00 USD</span>
+                    <div class="product-header">
+                        <h3>JAIL TERROR</h3>
+                        <div class="product-meta">
+                            <span>300gsm / 9g</span>
+                            <span>0.001786 BTC</span>
+                        </div>
                     </div>
-                    <a href="/product/zombie-sheets" class="btn-primary btn-block">VIEW SPECS</a>
+                    <div class="product-body">
+                        <p class="product-desc">The pinnacle of potency. Our 300gsm Jail Terror cards are meticulously dipped in a massive 9g of 5F-ADB. For an undetectable, professional finish.</p>
+                        <div class="price-block">0.001786 BTC | $150.00 USD</div>
+                    </div>
+                    <div class="product-footer">
+                        <a href="/product/jail-terror" class="btn-primary">VIEW SPECS</a>
+                        <a href="/checkout" class="btn-secondary">PURCHASE</a>
+                    </div>
                 </div>
-
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>ZOMBIE SHEETS</h3>
+                        <div class="product-meta">
+                            <span>200gsm / 5g</span>
+                            <span>0.001610 BTC</span>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <p class="product-desc">Unleash the power. Our 200gsm Zombie Sheets are hyper-saturated, soaking in a massive 5g dose of 5F-ADB. An experience engineered for maximum impact.</p>
+                        <div class="price-block">0.001610 BTC | $135.00 USD</div>
+                    </div>
+                    <div class="product-footer">
+                        <a href="/product/zombie-sheets" class="btn-primary">VIEW SPECS</a>
+                        <a href="/checkout" class="btn-secondary">PURCHASE</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- PRODUCT VISUALS GALLERY -->
-    <section id="gallery" class="section">
+    <!-- SPECS -->
+    <section id="specs" class="section">
         <div class="section-inner">
-            <p class="section-label">// PRODUCT VISUALS</p>
-            <h2 class="section-title">GALLERY</h2>
+            <p class="section-label">// TECHNICAL SPECS</p>
+            <h2 class="section-title">PRODUCT SPECIFICATIONS</h2>
+            <div class="trust-grid">
+                <div class="trust-card">
+                    <div class="trust-num">9g</div>
+                    <div class="trust-label">MAX SATURATION</div>
+                    <p class="trust-desc">Our cards are soaked to absolute maximum capacity for undetectable results.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-num">300gsm</div>
+                    <div class="trust-label">CARDSTOCK WEIGHT</div>
+                    <p class="trust-desc">Premium cardstock quality for professional handling and durability.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-num">2×</div>
+                    <div class="trust-label">POTENCY</div>
+                    <p class="trust-desc">Double the impact compared to standard sheets for maximum effectiveness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section">
+        <div class="section-inner">
+            <p class="section-label">// PROOF OF QUALITY</p>
+            <h2 class="section-title">VISUAL EVIDENCE</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://photos.app.goo.gl/bfqYNu3LGMqzVUPw8" alt="Product Visual 1" loading="lazy">
+                    <img src="/static/k2-product-display-720x1616.png" alt="K2 Product Display">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://photos.app.goo.gl/koB3TKshj9mHqVRs8" alt="Product Visual 2" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://photos.app.goo.gl/oHCZDsBtE966LWme7" alt="Product Visual 3" loading="lazy">
+                    <img src="/static/k2-product-secondary-1264x1264.png" alt="K2 Product Secondary">
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- SPECS / TRUST -->
-    <section id="specs" class="section section-alt">
-        <div class="section-inner">
-            <p class="section-label">// WHY K2</p>
-            <h2 class="section-title">ENGINEERED FOR IMPACT</h2>
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <span class="trust-num">01</span>
-                    <h4>MAXIMUM CAPACITY</h4>
-                    <p>Every piece soaked to its absolute limit. No shortcuts.</p>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-num">02</span>
-                    <h4>PROFESSIONAL FINISH</h4>
-                    <p>Undetectable. Clean. Factory-grade presentation every time.</p>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-num">03</span>
-                    <h4>TWO DECADES</h4>
-                    <p>Twenty years of soaking expertise poured into every sheet.</p>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-num">04</span>
-                    <h4>SECURE DISCRETION</h4>
-                    <p>BTC-only transactions. No trace. No questions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ORDER / CHECKOUT -->
-    <section id="orders" class="section">
-        <div class="section-inner">
-            <p class="section-label">// CHECKOUT</p>
-            <h2 class="section-title">PROCESS TRANSACTION</h2>
-            <form class="checkout-form" action="/checkout" method="POST">
-                <label for="order_id">ORDER ID</label>
-                <input type="text" id="order_id" name="order_id" placeholder="e.g. K2-20261005-001" required>
-
-                <label for="crypto_amount">BTC AMOUNT</label>
-                <input type="text" id="crypto_amount" name="crypto_amount" placeholder="e.g. 0.001786" required>
-
-                <label for="product_select">PRODUCT</label>
-                <select id="product_select" name="product_select" required>
-                    <option value="">-- SELECT --</option>
-                    <option value="Jail Terror">Jail Terror (300gsm / 9g)</option>
-                    <option value="Zombie Sheets">Zombie Sheets (200gsm / 5g)</option>
-                </select>
-
-                <label for="notes">NOTES</label>
-                <textarea id="notes" name="notes" rows="3" placeholder="Any special instructions..."></textarea>
-
-                <button type="submit" class="btn-primary btn-block">SUBMIT ORDER</button>
-            </form>
-            <p class="form-hint">All transactions processed via BTC wallet. Tracking issued on confirmation.</p>
         </div>
     </section>
 

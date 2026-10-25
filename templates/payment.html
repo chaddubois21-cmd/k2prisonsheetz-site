@@ -4,78 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout | K2 Prisonsheetz</title>
-    <!-- Link your CSS here -->
-    <style> /* Paste your custom CSS here */ </style>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/images/k2-logo.png">
 </head>
 <body>
-    <!-- Navigation Bar/Header Here -->
-    <div class="container my-5">
-        <!-- ===== 🛡️ LIABILITY &amp;amp;amp;amp;amp;amp;Terms Block (The Rules) ===== -->
-        <div class="alert alert-info p-5 shadow-lg mb-5" role="alert">
-            <h4 class="text-primary mb-2"&gt;🛡️ Our Delivery Covenant&lt;/h4&gt;
-            <p class="fs-5 fw-bold" style="color: var(--primary-blue);"&gt;C5 Premium Envelopes &amp;amp;amp;amp;amp;amp;Delivery Promise:&lt;/p&gt;
-            <p class="mb-3"&gt;We guarantee 100% free one-time reship for our people if the package is lost by the post. 📦&lt;/p&gt;
-            <div class="alert alert-danger mt-3 p-3"&gt;
-                &lt;strong&amp;gt;🚨 Liability Clause:&amp;lt;/strong&gt; No Refunds or RESHIPS are provided if you PROVIDE A WRONG ADDRESS. Your diligence is paramount to your dosage!
-            &lt;/div&gt;
-            <p class="small mt-3 text-muted"&gt;&lt;em&gt;(Our job is delivery; your job is the correct address.)&lt;/em&gt;&lt;/p&gt;
-        </div>
 
-        <!-- ===== 🛒 TRANSACTION FORM (The Engine Input) ===== -->
-        <div class="row">
-            <div class="col-lg-8">
-                <h2 class="text-dark mb-4"&gt;Complete Your Order&lt;/h2&gt;
-                <form method="POST" action="/checkout">
-                    <!-- Order ID Field -->
-                    <div class="mb-4">
-                        <label for="order_id" class="form-label fs-5"&gt;Order Reference / Product ID&lt;/label>
-                        <input type="text" class="form-control form-control-lg" id="order_id" name="order_id" placeholder="e.g., JAIL_TERROR" required>
-                    </div>
-
-                    <!-- BTC Amount Field -->
-                    <div class="mb-4">
-                        <label for="crypto_amount" class="form-label fs-5"&gt;Amount to Transfer (BTC)&lt;/label>
-                        <input type="number" class="form-control form-control-lg" id="crypto_amount" name="crypto_amount" step="0.0001" min="0.0001" required>
-                    </div>
-
-                    <!-- Notes Field -->
-                    <div class="mb-4">
-                        <label for="notes" class="form-label fs-5"&gt;Notes (Optional)&lt;/label>
-                        <textarea class="form-control" id="notes" name="notes" rows="3" placeholder="Mention specific chemical grade or shipping details"></textarea>
-                    </div>
-
-                    <!-- SUBMIT BUTTON (Triggers app.py) -->
-                    <div class="d-grid gap-3 mt-5">
-                        <button type="submit" class="btn btn-warning btn-lg shadow-lg" style="background-color: var(--accent-yellow); color: var(--primary-blue);"&gt;
-                            CONFIRM &amp;amp;amp; GENERATE TRACKING INFO
-                        &lt;/button&gt;
-                    </div>
-                </form>
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <img src="/static/images/k2-logo.png" alt="K2 Prison Sheetz Logo" height="40" style="filter: drop-shadow(0 0 20px #39FF14);">
+                K2 Prison Sheetz
+            </a>
+            <div class="nav-links">
+                <a href="/#products">PRODUCTS</a>
+                <a href="/#specs">SPECS</a>
+                <a href="/checkout">ORDERS</a>
             </div>
+        </div>
+    </nav>
 
-            <div class="col-lg-4">
-                <!-- 💰 WALLET DISPLAY (The Critical Info) -->
-                <div class="card p-4 sticky-top" style="top: 50px;"&gt;
-                    <h4 class="text-primary mb-3"&gt;💰 Destination Wallet&lt;/h4&gt;
-                    <div class="alert alert-info p-3 mb-3">
-                        &lt;strong&amp;gt;Wallet Address:&amp;lt;/strong&gt; 
-                        <a href="bc1qtema35w6qeeqmwnuxr3u9f3nx3gvqc79cl7dxv" target="_blank" class="fw-bold fs-5 text-danger"&gt;bc1qtema35w6qeeqmwnuxr3u9f3nx3gvqc79cl7dxv&lt;/a&gt;
-                    </div>
-                    <p class="small text-muted"&gt;*(Note: This address is hardcoded into the backend script.)&lt;/p&gt;
+    <!-- CHECKOUT -->
+    <section class="section">
+        <div class="section-inner">
+            <p class="section-label">// CHECKOUT</p>
+            <h2 class="section-title">PROCESS TRANSACTION</h2>
+
+            <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+                <!-- ORDER FORM -->
+                <div class="payment-card">
+                    <h4 style="font-family: var(--mono-wide); font-size: 0.85rem; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem;">ORDER FORM</h4>
+
+                    <form method="POST" action="/checkout" class="checkout-form">
+                        <label for="order_id">ORDER ID</label>
+                        <input type="text" id="order_id" name="order_id" placeholder="e.g. K2-20261005-001" required>
+
+                        <label for="crypto_amount">BTC AMOUNT</label>
+                        <input type="text" id="crypto_amount" name="crypto_amount" placeholder="e.g. 0.001786" required>
+
+                        <label for="product_select">PRODUCT</label>
+                        <select id="product_select" name="product_select" required>
+                            <option value="">-- SELECT --</option>
+                            <option value="Jail Terror">Jail Terror (300gsm / 9g)</option>
+                            <option value="Zombie Sheets">Zombie Sheets (200gsm / 5g)</option>
+                        </select>
+
+                        <label for="notes">NOTES</label>
+                        <textarea id="notes" name="notes" rows="3" placeholder="Any special instructions..."></textarea>
+
+                        <button type="submit" class="btn-primary btn-block" style="margin-top: 0.5rem;">SUBMIT ORDER</button>
+                    </form>
+
+                    <p class="form-hint" style="margin-top: 1.5rem;">All transactions processed via BTC wallet. Tracking issued on confirmation.</p>
+                </div>
+
+                <!-- WALLET DISPLAY -->
+                <div class="payment-card">
+                    <h4 style="font-family: var(--mono-wide); font-size: 0.85rem; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">DESTINATION WALLET</h4>
+                    <code class="wallet-address">bc1qtema35w6qeeqmwnuxr3u9f3nx3gvqc79cl7dxv</code>
+                    <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.75rem;">*(Hardcoded in backend script. BTC only. No refunds on wrong address.)*</p>
                 </div>
             </div>
-        </div>
 
-        <!-- Status Messages (Success/Error Feedback from app.py) -->
-        {% if status == 'Success' %}
-            <div class="alert alert-success mt-5" role="alert">
-                &lt;span&amp;gt;ORDER SUCCESSFUL!&lt;/span&gt; Your Tracking Number: <strong>{{ tracking_number }}</strong>. A Telegram alert has been sent!
-            &lt;/div&gt;
-        {% elif status == 'Error' %}
-            <div class="alert alert-danger mt-5" role="alert">
-                &lt;span&amp;gt;TRANSACTION ERROR:&amp;lt;/span&gt; {{ error_message }}
-            &lt;/div&gt;
-        {% endif %}
-    </div>
+            <!-- Status Messages -->
+            {% if status == 'Success' %}
+                <div style="margin-top: 2rem; padding: 1.5rem; background: var(--surface); border: 2px solid var(--border); text-align: center;">
+                    <p class="status-success">ORDER SUCCESSFUL!</p>
+                    <p style="color: var(--text); margin-top: 0.5rem;">Tracking Number: <strong>{{ tracking_number }}</strong></p>
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">A Telegram alert has been sent.</p>
+                </div>
+            {% elif status == 'Error' %}
+                <div style="margin-top: 2rem; padding: 1.5rem; background: var(--surface); border: 2px solid #ff3333; text-align: center;">
+                    <p class="status-error">TRANSACTION ERROR</p>
+                    <p style="color: var(--text); margin-top: 0.5rem;">{{ error_message }}</p>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <p>K2 PRISON SHEETZ // THE PINNACLE OF POTENCY</p>
+            <p><a href="mailto:texasmade86@proton.me">texasmade86@proton.me</a></p>
+            <p>&copy; 2024 K2 Prisonsheetz</p>
+        </div>
+    </footer>
+
 </body>
 </html>

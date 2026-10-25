@@ -3,57 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Specs - TMF | [Product Name]</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .detail-header { background: var(--primary-blue); color: white; padding: 60px 0; margin-bottom: 40px; }
-        .photo-section img { max-width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px; }
-    </style>
+    <title>Product Specs - K2 Prison Sheetz | {{ product.name }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/images/k2-logo.png">
 </head>
 <body>
-    <!-- Navigation Link Back -->
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <a href="index.html" class="navbar-brand">⬅️ Back to Fabs Hub</a>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <img src="/static/images/k2-logo.png" alt="K2 Prison Sheetz Logo" height="40" style="filter: drop-shadow(0 0 20px #39FF14);">
+                K2 Prison Sheetz
+            </a>
+            <div class="nav-links">
+                <a href="/#products">PRODUCTS</a>
+                <a href="/#specs">SPECS</a>
+                <a href="/checkout">ORDERS</a>
+            </div>
         </div>
     </nav>
 
-    <div class="container my-5">
-        <!-- 🖼️ Dedicated Photo Spot -->
-        <div class="photo-section mb-5 p-4 border rounded shadow-sm">
-            <h2 class="text-center text-primary mb-4">Visuals of Our Dips &amp;amp; Materials</h2>
-            <!-- 📸 PLACEHOLDERS FOR YOUR PHOTOS -->
-            <img src="[URL_TO_YOUR_BEST_DIP_PHOTO]" class="img-fluid mb-4" alt="High-Res Dip Sample">
-            <img src="[URL_TO_YOUR_POWDER_CLOSEUP]" class="img-fluid" alt="Powder Closeup">
+    <!-- PRODUCT DETAIL HEADER -->
+    <header class="detail-header">
+        <div class="section-inner" style="text-align: center;">
+            <h1 class="section-title">{{ product.name }}</h1>
+            <p class="hero-sub" style="margin-top: 1rem;">{{ product.hook }}</p>
         </div>
+    </header>
 
-        <!-- 📝 Description &amp;amp; Technical Details -->
-        <div class="row g-5">
-            <div class="col-md-8">
-                <h2 class="text-dark mb-3">[Product Name Here - e.g., 5F-ADB Drip Page]</h2>
-                <p class="lead">
-                    [Insert Detailed, Technical Description Here. Emphasize the chemistry, the color stability, and the archival quality of the paper. Be technical!]
-                </p>
-                <p>
-                    *Technical Specs: Purity Levels, Dye Batches, GSM Weight, Solvent Used, etc.*
-                </p>
-                <div class="alert alert-warning mt-4">
-                    <strong>⚡️ Provenance:</strong> This item is directly derived from our certified batch of 5F-ADB.
+    <!-- MAIN CONTENT -->
+    <section class="section">
+        <div class="section-inner">
+            <div style="display: grid; grid-template-columns: 1fr; gap: 3rem;">
+                <!-- PRODUCT VISUAL -->
+                <div class="photo-section">
+                    <img src="/static/k2-product-display-720x1616.png" alt="{{ product.name }} Display" loading="lazy">
+                </div>
+
+                <!-- PRODUCT INFO -->
+                <div>
+                    <p class="product-desc" style="font-size: 1rem; margin-bottom: 1.5rem;">{{ product.promise }}</p>
+                    <p class="product-desc" style="font-size: 1rem; margin-bottom: 1.5rem;">{{ product.details }}</p>
+
+                    <div class="price-block" style="margin: 2rem 0;">
+                        {{ product.metrics }}
+                    </div>
+
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: var(--surface); border: 2px solid var(--border-muted); border-radius: 4px;">
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">WALLET</p>
+                        <code class="wallet-address">bc1qtema35w6qeeqmwnuxr3u9f3nx3gvqc79cl7dxv</code>
+                    </div>
+
+                    <a href="/checkout" class="btn-primary btn-block" style="margin-top: 1.5rem;">PROCESS ORDER</a>
+                    <a href="/" class="back-link" style="display: inline-block; margin-top: 1rem;">← BACK TO CATALOG</a>
                 </div>
             </div>
-
-            <div class="col-md-4">
-                <div class="card p-4 sticky-top" style="top: 20px;">
-                    <h4 class="text-primary mb-3">Order Details</h4>
-                    <p class="fw-bold text-success fs-4">Price: [INSERT_PRICE_HERE] BTC</p>
-                    <p class="small text-muted">Includes: 1-Time Ship Free Replacement Guarantee.</p>
-                    <hr>
-                    <a href="payment.html" class="btn btn-warning w-100 py-3 fs-5" style="background-color: var(--accent-yellow); color: var(--primary-blue);">
-                        🛒 BUY NOW with BTC
-                    </a>
-                </div>
-            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <p>K2 PRISON SHEETZ // THE PINNACLE OF POTENCY</p>
+            <p><a href="mailto:texasmade86@proton.me">texasmade86@proton.me</a></p>
+            <p>&copy; 2024 K2 Prisonsheetz</p>
+        </div>
+    </footer>
+
 </body>
 </html>
